@@ -26,7 +26,7 @@ For those who prefer PowerShell (works on Windows/Mac and Linux Versions) use th
 $Filelocation = "C:\VMW2016Sessions\raw_download_urls.txt" #Mac/Linux example: "~/VMW2016Sessions/raw_download_urls.txt"
 $SaveLocation = "C:\VMW2016Sessions\" #Mac/Linux example: "~/VMW2016Sessions/"
 $List = Import-CSV $Filelocation -Header "ID", "Link" -Delimiter "#"
-If (Get-Module BitsTransfer -ErrorAction SilentlyContinue) {
+If (Get-Command -Module BitsTransfer -ErrorAction SilentlyContinue) {
     $Bits=$true
     Write-Host "Using BITS transfer for faster more reliable downloads"
 }
